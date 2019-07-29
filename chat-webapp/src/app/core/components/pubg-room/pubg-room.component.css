@@ -1,0 +1,12 @@
+.lobby-component {
+  text-align: center;
+  overflow-x: hidden;
+  padding: 10px;
+  height: 100%;
+  background-color: bisque;
+}
+
+.message-form {
+  margin: auto;
+  display: block;
+}

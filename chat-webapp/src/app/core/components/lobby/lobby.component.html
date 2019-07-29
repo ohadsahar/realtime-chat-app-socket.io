@@ -1,0 +1,28 @@
+<div class="lobby-component">
+  <section class="output-lobby-data">
+    <div class="row">
+      <div class="col-sm-12 col-md-12 col-lg-12">
+        <h1>Messages</h1>
+        {{typing}}
+        <p>{{wellcomeMessage}}</p>
+        <div *ngFor="let message of messageArray">
+          <p>{{message?.username}}: {{message?.message}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="input-lobby-data">
+    <div class="row">
+      <form #messageForm="ngForm" (submit)="newMessage(messageForm)" ngForm class="message-form">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <mat-form-field class="input-full-width">
+            <input matInput (input)="typyingMessage($event)" type="text" name="message" #message="ngModel" ngModel placeholder="send message">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <button type="submit">Send the message</button>
+        </div>
+      </form>
+    </div>
+  </section>
+</div>
